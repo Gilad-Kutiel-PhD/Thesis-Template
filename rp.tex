@@ -1,0 +1,27 @@
+\usepackage{atbegshi}
+\newif\ifRP
+\newbox\RPbox
+\setbox\RPbox\vbox{\vskip1pt}
+\makeatletter
+\AtBeginShipout{%
+  \ifRP
+    \AtBeginShipoutDiscard%
+    \global\setbox\RPbox\vbox{\unvbox\RPbox
+      \box\AtBeginShipoutBox\kern\c@page sp}%
+  \fi
+}%
+\renewcommand{\RPtrue}{%
+  \clearpage
+  \ifRP\RPfalse\fi
+  \global\let\ifRP\iftrue
+}%
+\renewcommand{\RPfalse}{%
+  \clearpage
+  \global\let\ifRP\iffalse
+  \setbox\RPbox\vbox{\unvbox\RPbox
+    \def\protect{\noexpand\protect\noexpand}%
+    \@whilesw\ifdim0pt=\lastskip\fi
+      {\c@page\lastkern\unkern\shipout\lastbox}%
+  }%
+}%
+\makeatother

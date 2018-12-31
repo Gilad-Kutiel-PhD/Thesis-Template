@@ -1,5 +1,9 @@
 \documentclass{report}
 
+\input{rp}
+\input{heb}
+\input{libs}
+
 \begin{document}
 
 \pagenumbering{gobble}
@@ -16,5 +20,15 @@
 
  
 \tableofcontents
+
+\newpage
+\RPtrue
+\pagenumbering{gobble}
+\input{binding-heb}
+\newpage
+\input{cover-heb}
+\newpage
+\pagenumbering{roman}
+\RPfalse
 
 \end{document}
