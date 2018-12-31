@@ -20,14 +20,28 @@
 
  
 \tableofcontents
-
+\listoffigures
+\listoftables
+ 
 \newpage
+
+\input{content}
+
+\bibliography{main}
+\bibliographystyle{plain}
+
+% HEBREW
 \RPtrue
 \pagenumbering{gobble}
+
+% BINDING PAGE HEBREW
 \input{binding-heb}
 \newpage
+
+% COVER PAGE HEBREW
 \input{cover-heb}
 \newpage
+
 \pagenumbering{roman}
 \RPfalse
 
