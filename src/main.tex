@@ -25,6 +25,9 @@
  
 \newpage
 
+\chapter*{Abstract}
+\input{abstract}
+
 \input{content}
 
 \bibliography{main}
@@ -43,6 +46,14 @@
 \newpage
 
 \pagenumbering{roman}
+
+% ABSTRACT HEBREW
+\begin{hebrew}
+\chapter*{\texthebrew{תקציר}}
+\end{hebrew}
+\input{abstract-heb}
+\newpage
+
 \RPfalse
 
 \end{document}
